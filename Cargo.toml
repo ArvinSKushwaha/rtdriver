@@ -1,0 +1,24 @@
+[package]
+name = "rtdriver"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 3
+strip = "symbols"
+lto = "fat"
+
+
+[dependencies]
+bytemuck = { version = "1.16.0", features = [
+    "const_zeroed",
+    "derive",
+    "min_const_generics",
+    "extern_crate_alloc",
+] }
+num = "0.4.3"
+paste = "1.0.15"
+rayon = "1.10.0"
+thiserror = "1.0.61"
+tikv-jemallocator = "0.5.4"
+tqdm = "0.7.0"
